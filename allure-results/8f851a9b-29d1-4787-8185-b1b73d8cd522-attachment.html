@@ -1,0 +1,196 @@
+<div>Status code 405 </div>
+
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+    &lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;/&gt;
+    &lt;script data-ezscrex=&quot;false&quot; data-cfasync=&quot;false&quot; data-pagespeed-no-defer=&quot;data-pagespeed-no-defer&quot;&gt;var __ez=__ez||{};__ez.stms=Date.now();__ez.evt={};__ez.script={};__ez.ck=__ez.ck||{};__ez.template={};__ez.template.isOrig=false;__ez.queue=(function(){var count=0,incr=0,items=[],timeDelayFired=false,hpItems=[],lpItems=[],allowLoad=true;var obj={func:function(name,funcName,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError){var self=this;this.name=name;this.funcName=funcName;this.parameters=parameters===null?null:(parameters instanceof Array)?parameters:[parameters];this.isBlock=isBlock;this.blockedBy=blockedBy;this.deleteWhenComplete=deleteWhenComplete;this.isError=false;this.isComplete=false;this.isInitialized=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){log(&quot;... func = &quot;+name);self.isInitialized=true;self.isComplete=true;log(&quot;... func.apply: &quot;+name);var funcs=self.funcName.split(&#39;.&#39;);var func=null;if(funcs.length&amp;gt;3){}else if(funcs.length===3){func=window[funcs[0]][funcs[1]][funcs[2]];}else if(funcs.length===2){func=window[funcs[0]][funcs[1]];}else{func=window[self.funcName];}
+if(typeof func!==&#39;undefined&#39;&amp;amp;&amp;amp;func!==null){func.apply(null,this.parameters);}
+if(self.deleteWhenComplete===true)delete items[name];if(self.isBlock===true){log(&quot;----- F&#39;D: &quot;+self.name);processAll();}}},file:function(name,path,isBlock,blockedBy,async,defer,proceedIfError){var self=this;this.name=name;this.path=path;this.async=async;this.defer=defer;this.isBlock=isBlock;this.blockedBy=blockedBy;this.isInitialized=false;this.isError=false;this.isComplete=false;this.proceedIfError=proceedIfError;this.isTimeDelay=false;this.process=function(){self.isInitialized=true;log(&quot;... file = &quot;+name);var scr=document.createElement(&#39;script&#39;);scr.src=path;if(async===true)scr.async=true;else if(defer===true)scr.defer=true;scr.onerror=function(){log(&quot;----- ERR&#39;D: &quot;+self.name);self.isError=true;if(self.isBlock===true){processAll();}};scr.onreadystatechange=scr.onload=function(){var state=scr.readyState;log(&quot;----- F&#39;D: &quot;+self.name);if((!state||/loaded|complete/.test(state))){self.isComplete=true;if(self.isBlock===true){processAll();}}};document.getElementsByTagName(&#39;head&#39;)[0].appendChild(scr);}}};function init(){window.addEventListener(&quot;load&quot;,function(){setTimeout(function(){timeDelayFired=true;log(&#39;TDELAY -----&#39;);processAll();},5000);},false);}
+function addFile(name,path,isBlock,blockedBy,async,defer,proceedIfError,priority){var item=new obj.file(name,path,isBlock,blockedBy,async,defer,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function setallowLoad(settobool){allowLoad=settobool}
+function addFunc(name,func,parameters,isBlock,blockedBy,autoInc,deleteWhenComplete,proceedIfError,priority){if(autoInc===true)name=name+&quot;_&quot;+incr++;var item=new obj.func(name,func,parameters,isBlock,blockedBy,deleteWhenComplete,proceedIfError);if(priority===true){hpItems[name]=item}else{lpItems[name]=item}
+items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFile(name,path){var item=new obj.file(name,path,false,[],false,false,true);item.isTimeDelay=true;log(name+&#39; ... &#39;+&#39; FILE! TDELAY&#39;);lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function addTimeDelayFunc(name,func,parameters){var item=new obj.func(name,func,parameters,false,[],true,true);item.isTimeDelay=true;log(name+&#39; ... &#39;+&#39; FUNCTION! TDELAY&#39;);lpItems[name]=item;items[name]=item;checkIfBlocked(item);}
+function checkIfBlocked(item){if(isBlocked(item)===true||allowLoad==false)return;item.process();}
+function isBlocked(item){if(item.isTimeDelay===true&amp;amp;&amp;amp;timeDelayFired===false){log(item.name+&quot; blocked = TIME DELAY!&quot;);return true;}
+if(item.blockedBy instanceof Array){for(var i=0;i&amp;lt;item.blockedBy.length;i++){var block=item.blockedBy[i];if(items.hasOwnProperty(block)===false){log(item.name+&quot; blocked = &quot;+block);return true;}else if(item.proceedIfError===true&amp;amp;&amp;amp;items[block].isError===true){return false;}else if(items[block].isComplete===false){log(item.name+&quot; blocked = &quot;+block);return true;}}}
+return false;}
+function log(msg){var href=window.location.href;var reg=new RegExp(&#39;[?&amp;amp;]ezq=([^&amp;amp;#]*)&#39;,&#39;i&#39;);var string=reg.exec(href);var res=string?string[1]:null;if(res===&quot;1&quot;)console.debug(msg);}
+function processAll(){count++;if(count&amp;gt;200)return;log(&quot;let&#39;s go&quot;);processItems(hpItems);processItems(lpItems);}
+function processItems(list){for(var i in list){if(list.hasOwnProperty(i)===false)continue;var item=list[i];if(item.isComplete===true||isBlocked(item)||item.isInitialized===true||item.isError===true){if(item.isError===true){log(item.name+&#39;: error&#39;)}else if(item.isComplete===true){log(item.name+&#39;: complete already&#39;)}else if(item.isInitialized===true){log(item.name+&#39;: initialized already&#39;)}}else{item.process();}}}
+init();return{addFile:addFile,addDelayFile:addTimeDelayFile,addFunc:addFunc,addDelayFunc:addTimeDelayFunc,items:items,processAll:processAll,setallowLoad:setallowLoad};})();__ez.evt.add=function(e,t,n){e.addEventListener?e.addEventListener(t,n,!1):e.attachEvent?e.attachEvent(&quot;on&quot;+t,n):e[&quot;on&quot;+t]=n()},__ez.evt.remove=function(e,t,n){e.removeEventListener?e.removeEventListener(t,n,!1):e.detachEvent?e.detachEvent(&quot;on&quot;+t,n):delete e[&quot;on&quot;+t]};__ez.script.add=function(e){var t=document.createElement(&quot;script&quot;);t.src=e,t.async=!0,t.type=&quot;text/javascript&quot;,document.getElementsByTagName(&quot;head&quot;)[0].appendChild(t)};__ez.queue.addFile(&#39;/detroitchicago/boise.js&#39;, &#39;/detroitchicago/boise.js?gcb=191-6&amp;amp;cb=1&#39;, false, [], true, false, true, false);__ez.dot={};__ez.queue.addFile(&#39;/detroitchicago/memphis.js&#39;, &#39;/detroitchicago/memphis.js?gcb=191-6&amp;amp;cb=2&#39;, false, [], true, false, true, false);__ez.queue.addFile(&#39;/detroitchicago/minneapolis.js&#39;, &#39;/detroitchicago/minneapolis.js?gcb=191-6&amp;amp;cb=1&#39;, false, [], true, false, true, false);__ez.vep=(function(){var pixels=[],pxURL=&quot;/detroitchicago/grapefruit.gif&quot;;function AddPixel(vID,pixelData){if(__ez.dot.isDefined(vID)&amp;amp;&amp;amp;__ez.dot.isValid(pixelData)){pixels.push({type:&#39;video&#39;,video_impression_id:vID,domain_id:__ez.dot.getDID(),t_epoch:__ez.dot.getEpoch(0),data:__ez.dot.dataToStr(pixelData)});}}
+function Fire(){if(typeof document.visibilityState!==&#39;undefined&#39;&amp;amp;&amp;amp;document.visibilityState===&quot;prerender&quot;){return;}
+if(__ez.dot.isDefined(pixels)&amp;amp;&amp;amp;pixels.length&amp;gt;0){while(pixels.length&amp;gt;0){var j=5;if(j&amp;gt;pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);(new Image()).src=__ez.dot.getURL(pxURL)+&quot;?orig=&quot;+(__ez.template.isOrig===true?1:0)+&quot;&amp;amp;v=&quot;+btoa(JSON.stringify(pushPixels));}}
+pixels=[];}
+return{Add:AddPixel,Fire:Fire};})();&lt;/script&gt;
+    &lt;script data-ezscrex=&quot;false&quot; data-cfasync=&quot;false&quot; data-pagespeed-no-defer=&quot;data-pagespeed-no-defer&quot;&gt;__ez.pel=(function(){var pixels=[],pxURL=&quot;/porpoiseant/army.gif&quot;;function AddAndFirePixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0);Fire();}
+function AddAndFireOrigPixel(adSlot,pixelData){AddPixel(adSlot,pixelData,0,0,0,0,0,true);Fire();}
+function GetCurrentPixels(){return pixels;}
+function AddPixel(adSlot,pixelData,revenue,est_revenue,bid_floor_filled,bid_floor_prev,stat_source_id,isOrig){if(!__ez.dot.isDefined(adSlot)||__ez.dot.isAnyDefined(adSlot.getSlotElementId,adSlot.ElementId)==false){return;}
+var ad_position_id=parseInt(__ez.dot.getTargeting(adSlot,&#39;ap&#39;));var impId=__ez.dot.getSlotIID(adSlot),adUnit=__ez.dot.getAdUnit(adSlot,isOrig);var compId=parseInt(__ez.dot.getTargeting(adSlot,&quot;compid&quot;));var lineItemId=0;var creativeId=0;var ezimData=getEzimData(adSlot);if(typeof ezimData==&#39;object&#39;){if(ezimData.creative_id!==undefined){creativeId=ezimData.creative_id;}
+if(ezimData.line_item_id!==undefined){lineItemId=ezimData.line_item_id;}}
+if(__ez.dot.isDefined(impId,adUnit)&amp;amp;&amp;amp;__ez.dot.isValid(pixelData)){pixels.push({type:&quot;impression&quot;,impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),revenue:revenue,est_revenue:est_revenue,ad_position:ad_position_id,ad_size:&quot;&quot;,bid_floor_filled:bid_floor_filled,bid_floor_prev:bid_floor_prev,stat_source_id:stat_source_id,country_code:__ez.dot.getCC(),pageview_id:__ez.dot.getPageviewId(),comp_id:compId,line_item_id:lineItemId,creative_id:creativeId,data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig,});}}
+function AddPixelById(impFullId,pixelData,isOrig){var vals=impFullId.split(&#39;/&#39;);if(__ez.dot.isDefined(impFullId)&amp;amp;&amp;amp;vals.length===3&amp;amp;&amp;amp;__ez.dot.isValid(pixelData)){var adUnit=vals[0],impId=vals[2];pixels.push({type:&quot;impression&quot;,impression_id:impId,domain_id:__ez.dot.getDID(),unit:adUnit,t_epoch:__ez.dot.getEpoch(0),pageview_id:__ez.dot.getPageviewId(),data:__ez.dot.dataToStr(pixelData),is_orig:isOrig||__ez.template.isOrig});}}
+function Fire(){if(typeof document.visibilityState!==&#39;undefined&#39;&amp;amp;&amp;amp;document.visibilityState===&quot;prerender&quot;)return;if(__ez.dot.isDefined(pixels)&amp;amp;&amp;amp;pixels.length&amp;gt;0){var allPixels=[pixels.filter(function(pixel){return pixel.is_orig}),pixels.filter(function(pixel){return!pixel.is_orig})];allPixels.forEach(function(pixels){while(pixels.length&amp;gt;0){var isOrig=pixels[0].is_orig||false;var j=5;if(j&amp;gt;pixels.length){j=pixels.length;}
+var pushPixels=pixels.splice(0,j);var pixelURL=__ez.dot.getURL(pxURL)+&quot;?orig=&quot;+(isOrig===true?1:0)+&quot;&amp;amp;sts=&quot;+btoa(JSON.stringify(pushPixels));if(typeof window.isAmp!==&#39;undefined&#39;&amp;amp;&amp;amp;isAmp&amp;amp;&amp;amp;typeof window._ezaq!==&#39;undefined&#39;&amp;amp;&amp;amp;_ezaq.hasOwnProperty(&quot;domain_id&quot;)){pixelURL+=&quot;&amp;amp;visit_uuid=&quot;+_ezaq[&#39;visit_uuid&#39;];}
+(new Image()).src=pixelURL;}})}
+pixels=[];}
+function getEzimData(adSlot){if(typeof _ezim_d==&quot;undefined&quot;){return false}
+var adUnitName=__ez.dot.getAdUnitPath(adSlot).split(&#39;/&#39;).pop();if(typeof _ezim_d===&#39;object&#39;&amp;amp;&amp;amp;_ezim_d.hasOwnProperty(adUnitName)){return _ezim_d[adUnitName];}
+for(var ezimKey in _ezim_d){if(ezimKey.split(&#39;/&#39;).pop()===adUnitName){return _ezim_d[ezimKey];}}
+return false;}
+return{Add:AddPixel,AddAndFire:AddAndFirePixel,AddAndFireOrig:AddAndFireOrigPixel,AddById:AddPixelById,Fire:Fire,GetPixels:GetCurrentPixels,};})();__ez.queue.addFile(&#39;/detroitchicago/raleigh.js&#39;, &#39;/detroitchicago/raleigh.js?gcb=191-6&amp;amp;cb=2&#39;, false, [], true, false, true, false);__ez.queue.addFile(&#39;/detroitchicago/tampa.js&#39;, &#39;/detroitchicago/tampa.js?gcb=191-6&amp;amp;cb=1&#39;, false, [], true, false, true, false);&lt;/script&gt;
+    &lt;script data-ezscrex=&quot;false&quot; type=&quot;text/javascript&quot; data-cfasync=&quot;false&quot;&gt;var _ezaq = {&quot;ad_cache_level&quot;:0,&quot;ad_count_adjustment&quot;:0,&quot;ad_lazyload_version&quot;:0,&quot;ad_location_ids&quot;:&quot;&quot;,&quot;ad_transform_level&quot;:0,&quot;adx_ad_count&quot;:0,&quot;bidder_method&quot;:3,&quot;bidder_version&quot;:5,&quot;city&quot;:&quot;Warangal&quot;,&quot;country&quot;:&quot;IN&quot;,&quot;days_since_last_visit&quot;:-1,&quot;display_ad_count&quot;:0,&quot;domain_id&quot;:133674,&quot;ds_adsize_opt_id&quot;:-1,&quot;engaged_time_visit&quot;:0,&quot;ezcache_level&quot;:1,&quot;ezcache_skip_code&quot;:8,&quot;form_factor_id&quot;:1,&quot;framework_id&quot;:1,&quot;has_bad_image&quot;:0,&quot;has_bad_words&quot;:0,&quot;iab_category&quot;:&quot;&quot;,&quot;is_from_recommended_pages&quot;:false,&quot;is_return_visitor&quot;:false,&quot;is_sitespeed&quot;:0,&quot;last_page_load&quot;:&quot;&quot;,&quot;last_pageview_id&quot;:&quot;&quot;,&quot;lt_cache_level&quot;:0,&quot;max_ads&quot;:0,&quot;metro_code&quot;:0,&quot;optimization_version&quot;:4,&quot;page_ad_positions&quot;:&quot;&quot;,&quot;page_view_count&quot;:0,&quot;page_view_id&quot;:&quot;8feb63b2-4aab-48b4-438a-185816b2e18d&quot;,&quot;position_selection_id&quot;:0,&quot;postal_code&quot;:&quot;506002&quot;,&quot;pv_event_count&quot;:0,&quot;response_time_orig&quot;:988,&quot;serverid&quot;:&quot;35.154.153.145:14839&quot;,&quot;state&quot;:&quot;TG&quot;,&quot;sub_page_ad_positions&quot;:&quot;&quot;,&quot;t_epoch&quot;:1608823235,&quot;template_id&quot;:0,&quot;time_on_site_visit&quot;:0,&quot;url&quot;:&quot;http://dummy.restapiexample.com/&quot;,&quot;user_id&quot;:0,&quot;word_count&quot;:0,&quot;worst_bad_word_level&quot;:0};var _ezim_d = null;var _ezat = {&quot;domain_id&quot;:133674,&quot;form_factor_id&quot;:1,&quot;framework_id&quot;:1,&quot;pageview_date&quot;:&quot;2020-12-24&quot;,&quot;pageview_id&quot;:&quot;8feb63b2-4aab-48b4-438a-185816b2e18d&quot;,&quot;template_id&quot;:0,&quot;url&quot;:&quot;http://dummy.restapiexample.com/&quot;,&quot;visit_uuid&quot;:&quot;3648823d-bea2-496d-5572-59ecf02ea7f7&quot;};&lt;/script&gt;
+    &lt;script data-ezscrex=&quot;false&quot; data-pagespeed-no-defer=&quot;data-pagespeed-no-defer&quot; data-cfasync=&quot;false&quot; type=&quot;text/javascript&quot;&gt;__ez.queue.addFile(&#39;banger.js&#39;, &#39;/porpoiseant/banger.js?cb=191-6&amp;amp;bv=94&amp;amp;v=36&amp;amp;PageSpeed=off&#39;, true, [], true, false, false, true);&lt;/script&gt;
+    &lt;script data-ezscrex=&quot;false&quot; data-cfasync=&quot;false&quot;&gt;(function(){if(&quot;function&quot;===typeof window.CustomEvent)return!1;window.CustomEvent=function(c,a){a=a||{bubbles:!1,cancelable:!1,detail:null};var b=document.createEvent(&quot;CustomEvent&quot;);b.initCustomEvent(c,a.bubbles,a.cancelable,a.detail);return b}})();&lt;/script&gt;
+    &lt;script data-ezscrex=&quot;false&quot; data-cfasync=&quot;false&quot;&gt;__ez.queue.addFile(&#39;/detroitchicago/tulsa.js&#39;, &#39;/detroitchicago/tulsa.js?gcb=191-6&amp;amp;cb=5&#39;, false, [], true, false, true, false);&lt;/script&gt;
+    &lt;meta name=&quot;robots&quot; content=&quot;noindex,nofollow,noarchive&quot;/&gt;
+    &lt;title&gt;An Error Occurred: Method Not Allowed&lt;/title&gt;
+    &lt;style&gt;body { background-color: #fff; color: #222; font: 16px/1.5 -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; margin: 0; }
+.container { margin: 30px; max-width: 600px; }
+h1 { color: #dc3545; font-size: 24px; }
+h2 { font-size: 18px; }&lt;/style&gt;
+    &lt;script data-ezscrex=&quot;false&quot; data-cfasync=&quot;false&quot; type=&quot;text/javascript&quot;&gt;window.google_analytics_uacct = &quot;UA-131129777-14&quot;;&lt;/script&gt;
+    &lt;script data-ezscrex=&quot;false&quot; data-cfasync=&quot;false&quot; type=&quot;text/javascript&quot;&gt;
+var _gaq = _gaq || [];
+_gaq.push(function(){
+	_gat._createTracker(&#39;UA-131129777-14&#39;, &#39;e&#39;);
+});
+_gaq.push(function(){
+	_gat._createTracker(&#39;UA-38339005-1&#39;, &#39;f&#39;);
+});
+_gaq.push([&#39;e._setDomainName&#39;, &#39;restapiexample.com&#39;]);
+_gaq.push([&#39;f._setDomainName&#39;, &#39;restapiexample.com&#39;]);
+_gaq.push([&#39;e._setCustomVar&#39;,1,&#39;template&#39;,&#39;pub_site_noads&#39;,3]);
+_gaq.push([&#39;e._setCustomVar&#39;,2,&#39;t&#39;,&#39;147&#39;,3]);
+_gaq.push([&#39;e._setCustomVar&#39;,3,&#39;rid&#39;,&#39;0&#39;,2]);
+_gaq.push([&#39;e._setCustomVar&#39;,4,&#39;bra&#39;,&#39;mod70&#39;,3]);
+_gaq.push([&#39;e._setAllowAnchor&#39;,true]);
+_gaq.push([&#39;e._setSiteSpeedSampleRate&#39;, 10]);
+_gaq.push([&#39;f._setCustomVar&#39;,1,&#39;template&#39;,&#39;pub_site_noads&#39;,3]);
+_gaq.push([&#39;f._setCustomVar&#39;,2,&#39;domain&#39;,&#39;restapiexample.com&#39;,3]);
+_gaq.push([&#39;f._setSiteSpeedSampleRate&#39;, 20]);
+_gaq.push([&#39;e._trackPageview&#39;]);
+_gaq.push([&#39;f._trackPageview&#39;]);
+
+
+(function() {
+ var ga = document.createElement(&#39;script&#39;); ga.type = &#39;text/javascript&#39;; ga.async = true;
+ ga.src = (&#39;https:&#39; == document.location.protocol ? &#39;https://ssl&#39; : &#39;http://www&#39;) + &#39;.google-analytics.com/ga.js&#39;;
+ var s = document.getElementsByTagName(&#39;script&#39;)[0]; s.parentNode.insertBefore(ga, s);
+})();
+&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;var ezouid = &quot;1&quot;;&lt;/script&gt;
+    &lt;base href=&quot;http://dummy.restapiexample.com/&quot;/&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+var ezoTemplate = &#39;pub_site_noads&#39;;
+if(typeof ezouid == &#39;undefined&#39;)
+{
+    var ezouid = &#39;none&#39;;
+}
+var ezoFormfactor = &#39;1&#39;;
+var ezo_elements_to_check = Array();
+&lt;/script&gt;
+    &lt;script data-ezscrex=&quot;false&quot; type=&quot;text/javascript&quot;&gt;
+var soc_app_id = &#39;0&#39;;
+var did = 133674;
+var ezdomain = &#39;restapiexample.com&#39;;
+var ezoicSearchable = 1;
+&lt;/script&gt;
+    &lt;script data-ezscrex=&quot;false&quot; data-pagespeed-no-defer=&quot;data-pagespeed-no-defer&quot; data-cfasync=&quot;false&quot; type=&quot;text/javascript&quot; style=&quot;display:none&quot;&gt;
+__ez.queue.addFile(&#39;__ezf_ezosuigeneris&#39;, &#39;//g.ezoic.net/ezosuigeneris.js&#39;, true, [], true, false, false, false);
+var __ez_ezosuigenerisEvt = function() { if(typeof(ezosuigeneris) != &#39;undefined&#39;){__ez.bit.AddAndFire(_ezaq[&#39;page_view_id&#39;], [(new __ezDotData(&#39;universal_user_id&#39;, ezosuigeneris))]); }};
+__ez.queue.addFunc(&#39;__ez_ezosuigenerisEvt&#39;, &#39;__ez_ezosuigenerisEvt&#39;, null, false, [&#39;__ezf_ezosuigeneris&#39;,&#39;/detroitchicago/minneapolis.js&#39;,&#39;/detroitchicago/memphis.js&#39;], false, false, false, false);&lt;/script&gt;
+    &lt;script data-ezscrex=&quot;false&quot; data-pagespeed-no-defer=&quot;data-pagespeed-no-defer&quot; data-cfasync=&quot;false&quot; type=&quot;text/javascript&quot; style=&quot;display:none&quot;&gt;__ez.queue.addFile(&#39;__ezf_ezosuigenerisc&#39;, &#39;//g.ezoic.net/ezosuigenerisc.js?nogen=1&#39;, true, [&quot;/detroitchicago/boise.js&quot;], true, false, false, false);&lt;/script&gt;
+    &lt;script data-ezscrex=&quot;false&quot; data-pagespeed-no-defer=&quot;data-pagespeed-no-defer&quot; data-cfasync=&quot;false&quot;&gt;
+function create_ezolpl(pvID, rv) {
+    var d = new Date();
+    d.setTime(d.getTime() + (365*24*60*60*1000));
+    var expires = &quot;expires=&quot;+d.toUTCString();
+    __ez.ck.setByCat(&quot;ezux_lpl_133674=&quot; + new Date().getTime() + &quot;|&quot; + pvID + &quot;|&quot; + rv + &quot;; &quot; + expires, 3);
+}
+function attach_ezolpl(pvID, rv) {
+    if (document.readyState === &quot;complete&quot;) {
+        create_ezolpl(pvID, rv);
+    }
+    if(window.attachEvent) {
+        window.attachEvent(&quot;onload&quot;, create_ezolpl, pvID, rv);
+    } else {
+        if(window.onload) {
+            var curronload = window.onload;
+            var newonload = function(evt) {
+                curronload(evt);
+                create_ezolpl(pvID, rv);
+            };
+            window.onload = newonload;
+        } else {
+            window.onload = create_ezolpl.bind(null, pvID, rv);
+        }
+    }
+}
+
+__ez.queue.addFunc(&quot;attach_ezolpl&quot;, &quot;attach_ezolpl&quot;, [&quot;8feb63b2-4aab-48b4-438a-185816b2e18d&quot;, &quot;false&quot;], false, [&#39;/detroitchicago/boise.js&#39;], true, false, false, false);
+&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&quot;container&quot;&gt;
+      &lt;h1&gt;Oops! An Error Occurred&lt;/h1&gt;
+      &lt;h2&gt;The server returned a &quot;405 Method Not Allowed&quot;.&lt;/h2&gt;
+      &lt;p&gt;
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;script type=&quot;text/javascript&quot; style=&quot;display:none;&quot;&gt;var __ez_dims = (function() {
+		var setCookie = function( name, content, expiry ) {
+			return document.cookie = name+&#39;=&#39;+content+((expiry)?&#39;;expires=&#39;+(new Date(Math.floor(new Date().getTime()+expiry*1000)).toUTCString()):&#39;&#39;)+&#39;;path=/&#39;;
+		};
+		var ffid = 1;
+		var oh = window.screen.height;
+		var ow = window.screen.width;
+		var h = ffid === 1 ? oh : (oh &amp;gt; ow) ? oh : ow;
+		var w = ffid === 1 ? ow : (oh &amp;gt; ow) ? ow : oh;
+		var uh = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName(&#39;body&#39;)[0].clientHeight;
+		var uw = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName(&#39;body&#39;)[0].clientWidth;
+		setCookie(&#39;ezds&#39;, encodeURIComponent(&#39;ffid=&#39;+ffid+&#39;,w=&#39;+w+&#39;,h=&#39;+h), (31536e3*7));
+		setCookie(&#39;ezohw&#39;, encodeURIComponent(&#39;w=&#39;+uw+&#39;,h=&#39;+uh), (31536e3*7));
+	})();&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; style=&quot;display:none;&quot; async=&quot;async&quot;&gt;
+__ez.queue.addFile(&#39;edmonton.php&#39;, &#39;/detroitchicago/edmonton.webp?a=a&amp;amp;cb=191-6&amp;amp;shcb=34&#39;, true, [&#39;/detroitchicago/minneapolis.js&#39;], true, false, false, false);
+__ez.queue.addFile(&#39;jellyfish.php&#39;, &#39;/porpoiseant/jellyfish.webp?a=a&amp;amp;cb=191-6&amp;amp;shcb=34&#39;, false, [], true, false, false, false);
+&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot; data-cfasync=&quot;false&quot;/&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Pagespeed: off</div>
+        <div>Transfer-Encoding: chunked</div>
+        <div>X-Middleton-Response: 405</div>
+        <div>Server: nginx/1.16.0</div>
+        <div>Date: Thu, 24 Dec 2020 15:20:36 GMT</div>
+        <div>Allow: GET, HEAD</div>
+        <div>X-Ezoic-Cdn: Miss</div>
+        <div>Host-Header: c2hhcmVkLmJsdWVob3N0LmNvbQ==</div>
+        <div>Referrer-Policy: </div>
+        <div>Response: 405</div>
+        <div>X-Middleton-Display: staticcontent_sol</div>
+        <div>X-Sol: pub_site</div>
+        <div>Content-Encoding: gzip</div>
+        <div>Vary: Accept-Encoding,Origin</div>
+        <div>Expires: Wed, 23 Dec 2020 15:20:36 GMT</div>
+        <div>Content-Type: text/html; charset=UTF-8</div>
+        <div>Display: staticcontent_sol</div>
+</div>
+
+

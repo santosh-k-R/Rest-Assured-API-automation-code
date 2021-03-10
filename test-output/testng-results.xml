@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="11" passed="11">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="16219" started-at="2020-12-29T09:42:07Z" finished-at="2020-12-29T09:42:23Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="16219" started-at="2020-12-29T09:42:07Z" finished-at="2020-12-29T09:42:23Z">
+      <class name="com.nisum.services.api_automation.tests.SampleTestCaseIT">
+        <test-method status="PASS" signature="SampleTestCase()[pri:0, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="SampleTestCase" duration-ms="3489" started-at="2020-12-29T09:42:07Z" description="Verifying Sample  API" finished-at="2020-12-29T09:42:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SampleTestCase -->
+        <test-method status="PASS" signature="postNewEmployees(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="postNewEmployees" duration-ms="1406" started-at="2020-12-29T09:42:12Z" description="Verifying Sample POST API" data-provider="empdataprovider" finished-at="2020-12-29T09:42:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[santosh10]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30000]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[23]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postNewEmployees -->
+        <test-method status="PASS" signature="postNewEmployees(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="postNewEmployees" duration-ms="1021" started-at="2020-12-29T09:42:13Z" description="Verifying Sample POST API" data-provider="empdataprovider" finished-at="2020-12-29T09:42:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[santosh11]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30001]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[24]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postNewEmployees -->
+        <test-method status="PASS" signature="postNewEmployees(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="postNewEmployees" duration-ms="990" started-at="2020-12-29T09:42:14Z" description="Verifying Sample POST API" data-provider="empdataprovider" finished-at="2020-12-29T09:42:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[santosh12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30002]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[25]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postNewEmployees -->
+        <test-method status="PASS" signature="postNewEmployees(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="postNewEmployees" duration-ms="1024" started-at="2020-12-29T09:42:15Z" description="Verifying Sample POST API" data-provider="empdataprovider" finished-at="2020-12-29T09:42:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[santosh13]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30003]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[26]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postNewEmployees -->
+        <test-method status="PASS" signature="postNewEmployees(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="postNewEmployees" duration-ms="1029" started-at="2020-12-29T09:42:16Z" description="Verifying Sample POST API" data-provider="empdataprovider" finished-at="2020-12-29T09:42:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[santosh14]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30004]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[27]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postNewEmployees -->
+        <test-method status="PASS" signature="postNewEmployees(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="postNewEmployees" duration-ms="1124" started-at="2020-12-29T09:42:17Z" description="Verifying Sample POST API" data-provider="empdataprovider" finished-at="2020-12-29T09:42:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[santosh15]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30005]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[28]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postNewEmployees -->
+        <test-method status="PASS" signature="postNewEmployees(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="postNewEmployees" duration-ms="1063" started-at="2020-12-29T09:42:18Z" description="Verifying Sample POST API" data-provider="empdataprovider" finished-at="2020-12-29T09:42:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[santosh16]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30006]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[29]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postNewEmployees -->
+        <test-method status="PASS" signature="postNewEmployees(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="postNewEmployees" duration-ms="2039" started-at="2020-12-29T09:42:19Z" description="Verifying Sample POST API" data-provider="empdataprovider" finished-at="2020-12-29T09:42:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[santosh17]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[30007]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[30]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postNewEmployees -->
+        <test-method status="PASS" signature="samplePutApi()[pri:3, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="samplePutApi" duration-ms="929" started-at="2020-12-29T09:42:22Z" description="Verifying the Sample PUT API" finished-at="2020-12-29T09:42:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- samplePutApi -->
+        <test-method status="PASS" signature="sampleDeletePost()[pri:4, instance:com.nisum.services.api_automation.tests.SampleTestCaseIT@271053e1]" name="sampleDeletePost" duration-ms="604" started-at="2020-12-29T09:42:22Z" description="Verifying the Sample DELETE API" finished-at="2020-12-29T09:42:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sampleDeletePost -->
+      </class> <!-- com.nisum.services.api_automation.tests.SampleTestCaseIT -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
